@@ -23,7 +23,7 @@
                 <div class="card-header">選單列表維護</div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table id="dataTable">
                             <thead>
                                 <tr>
                                     <th>選單名稱</th>
@@ -39,8 +39,10 @@
                                         <td>{{ $category->slug }}</td>
                                         <td>{{ $category->sort }}</td>
                                         <td>
-                                            <a href="{{ route('backend.category.edit', $category->id) }}" class="btn btn-primary">編輯</a>
-                                            <form action="{{ route('backend.category.destroy', $category->id) }}" method="POST" class="d-inline">
+                                            <a href="{{ route('backend.category.edit', $category->id) }}"
+                                                class="btn btn-primary">編輯</a>
+                                            <form action="{{ route('backend.category.destroy', $category->id) }}"
+                                                method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">刪除</button>
@@ -51,9 +53,9 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        {{ $menus->links() }}
-                    </div>
+                    {{-- <div class="d-flex justify-content-center">
+                        {{ $categories->links() }}
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -61,6 +63,17 @@
 @endsection
 
 @section('js')
+    <script>
+        window.addEventListener('DOMContentLoaded', event => {
+            // Simple-DataTables
+            // https://github.com/fiduswriter/Simple-DataTables/wiki
+
+            const datatablesSimple = document.getElementById('dataTable');
+            if (datatablesSimple) {
+                new simpleDatatables.DataTable(datatablesSimple);
+            }
+        });
+    </script>
 @endsection
 
 @section('css')
