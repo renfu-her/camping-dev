@@ -7,14 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: case-boost
-      uses: appleboy/ssh-action@v1.0.3
+    - name: camping-dev
+      uses: nekiro/ssh-job@main
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
+        user: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        command: |
           cd /home/cloudpanel/htdocs/camping.dev-laravel.co
           git pull
           php8.1 /usr/local/bin/composer install
