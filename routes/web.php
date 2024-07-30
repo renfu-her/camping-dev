@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NavigationController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,9 @@ use App\Http\Controllers\NavigationController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('frontend.home');
 });
 
 Route::group(['prefix' => 'rent', 'as' => 'rent.'], function () {
-   
+   Route::get('/{product_name}', [ProductController::class, 'index'])->name('index');
 });

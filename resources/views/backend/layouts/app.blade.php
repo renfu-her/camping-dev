@@ -72,6 +72,13 @@
                             選單管理
                         </a>
                     </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="{{ route('backend.product.index') }}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
+                            產品管理
+                        </a>
+                    </div>
                 </div>
                 <!-- Sidenav Footer-->
                 <div class="sidenav-footer">

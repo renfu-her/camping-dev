@@ -5,11 +5,19 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Product;
+use App\Models\Category;
+
 class ProductController extends Controller
 {
     public function index()
     {
-        return view('backend.product.index');
+
+        $categories = Category::where('slug', 'like', '/rent/%')->where('status', 1)->get();
+
+        $products = Product::with('category')->get();
+
+        return view('backend.product.index', compact('products', 'categories'));
     }
 
     public function create()

@@ -117,7 +117,7 @@
 
     <!-- 主選單 -->
     @include('partials.menu')
-    
+
     @yield('content')
 
     <!-- Start:Copyright  -->
@@ -164,6 +164,13 @@
             </div>
         </div>
     </div>
+
+    @if(Session::has('error'))
+        <script>
+            alert("{{ Session::get('error') }}");
+        </script>
+    @endif
+
     <!-- Modal Search End -->
 
     <!-- JavaScript Libraries -->

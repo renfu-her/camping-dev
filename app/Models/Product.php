@@ -16,5 +16,17 @@ class Product extends Model
         'image',
         'sort',
         'status',
+        'category_id',
     ];
+
+    protected $casts = [
+        'status' => 'boolean',
+    ];
+
+     // 定義與 Category 的關聯
+     public function category()
+     {
+         return $this->belongsTo(Category::class);
+     }
+
 }
