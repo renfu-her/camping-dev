@@ -25,17 +25,17 @@
                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.store')">
                         <div class="mt-3">
-                            <x:form::select class="form-select" name="parent_id" label="父選單" :options="$categories"/>
+                            <x:form::select class="form-select" name="parent_id" label="父選單" :options="$categories" required/>
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input name="name" label="選單名稱" />
+                            <x:form::input name="name" label="選單名稱" required />
                         </div>
                         <div class="mt-3">
-                            <x:form::input name="slug" label="選單連結" />
+                            <x:form::input name="slug" label="選單連結" required />
                         </div>
                         <div class="mt-3">
-                            <x:form::input type="number" name="sort" label="選單排序" value="1" />
+                            <x:form::input type="number" name="sort" label="選單排序" value="1" required />
                         </div>
 
                         <div class="mt-3">
