@@ -20,7 +20,14 @@
         <!-- Main page content-->
         <div class="container-xl px-4 mt-4">
             <div class="card">
+
                 <div class="card-header">選單列表維護</div>
+                <div class="card-body">
+                    <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
+                    <a href="{{ route('backend.category.create') }}" class="btn btn-primary">
+                        <i class="fa-regular fa-square-plus"></i>&nbsp;新增選單</a>
+                    <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>&nbsp;刪除</a>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="dataTable">
@@ -29,26 +36,13 @@
                                     <th>選單名稱</th>
                                     <th>選單連結</th>
                                     <th>選單排序</th>
+                                    <th>啓用狀態</th>
                                     <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
-                                    <tr>
-                                        <td>{{ $category->name }}</td>
-                                        <td>{{ $category->slug }}</td>
-                                        <td>{{ $category->sort }}</td>
-                                        <td>
-                                            <a href="{{ route('backend.category.edit', $category->id) }}"
-                                                class="btn btn-primary">編輯</a>
-                                            <form action="{{ route('backend.category.destroy', $category->id) }}"
-                                                method="POST" class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                @foreach ($tree as $category)
+                                    @include('backend.category.category-row', ['category' => $category])
                                 @endforeach
                             </tbody>
                         </table>

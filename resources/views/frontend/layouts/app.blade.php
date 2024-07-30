@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-tw">
 
@@ -11,11 +10,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap">
 
     <link rel="stylesheet" href="{{ asset('js/fontawesome/css/all.css') }}" />
     <link rel="stylesheet" href="{{ asset('js/bootstrap-icons/bootstrap-icons.css') }}">
-    
+
     <link rel="stylesheet" href="{{ asset('js/animate/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('js/owlcarousel/assets/owl.carousel.min.css') }}">
 
@@ -48,14 +48,15 @@
                 <a href="#" class="link-yellow fw-bold me-2">購物車</a>
                 <a href="#" class="link-yellow fw-bold me-2">我的訂單</a>
                 <a href="#" class="link-yellow fw-bold me-2">顧客中心</a>
-                <a href="#" class="link-yellow fw-bold me-1">註冊</a>|<a href="#" class="link-yellow fw-bold ms-1">登入</a>
+                <a href="#" class="link-yellow fw-bold me-1">註冊</a>|<a href="#"
+                    class="link-yellow fw-bold ms-1">登入</a>
             </div>
         </div>
     </div>
     <!-- End:Topbar-->
 
     <!-- Start:主選單-->
-    <div class="container-fluid fixed-top position-relative p-0">
+    {{-- <div class="container-fluid fixed-top position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
                 <h1 class="text-white m-0"><img src="{{ asset('img/logo.svg') }}" class="img-fluid" width="250px"></h1>
@@ -111,11 +112,14 @@
                 <a href="#" class="btn btn-green rounded-circle text-white flex-wrap flex-sm-shrink-0"
                     data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></a>
         </nav>
-    </div>
+    </div> --}}
     <!-- End:主選單-->
 
-    @yield('content')
+    <!-- 主選單 -->
+    @include('partials.menu')
     
+    @yield('content')
+
     <!-- Start:Copyright  -->
     <div class="container-fluid copyright py-4">
         <div class="container">
@@ -151,7 +155,8 @@
                 </div>
                 <div class="modal-body d-flex align-items-center">
                     <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="搜尋" aria-describedby="search-icon-1">
+                        <input type="search" class="form-control p-3" placeholder="搜尋"
+                            aria-describedby="search-icon-1">
                         <span id="search-icon-1" class="input-group-text p-3 bg-green"><i
                                 class="fa fa-search text-white"></i></span>
                     </div>
