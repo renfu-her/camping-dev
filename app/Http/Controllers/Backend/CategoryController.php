@@ -90,6 +90,6 @@ class CategoryController extends Controller
     {
         Category::destroy($id);
 
-        return redirect()->route('backend.category.index');
+        return redirect()->route('backend.category.index')->with('success', '刪除成功！');
     }
 }

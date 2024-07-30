@@ -47,6 +47,8 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        //
+        Product::destroy($id);
+
+        return redirect()->route('backend.product.index')->with('success', '刪除成功！');
     }
 }

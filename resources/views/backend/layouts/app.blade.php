@@ -107,6 +107,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous">
     </script>
 
+    @if(Session::has('success'))
+        <script>
+            alert("{{ Session::get('success') }}");
+        </script>
+    @endif
+
+    @if(Session::has('error'))
+        <script>
+            alert("{{ Session::get('error') }}");
+        </script>
+    @endif
+
     @yield('js')
 </body>
 
