@@ -46,8 +46,13 @@
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>
+                                            @if(empty($product->image))
+                                            <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
+                                                style="width: 150px;">
+                                            @else
                                             <img src="{{ asset($product->image) }}" alt="{{ $product->name }}"
-                                                style="width: 100px;">
+                                                style="width: 150px;">
+                                            @endif
                                         </td>
                                         <td>{{ $product->status ? '啓用' : '停用' }}</td>
                                         <td>

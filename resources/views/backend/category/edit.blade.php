@@ -19,27 +19,27 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">選單 - 新增</div>
+                <div class="card-header">選單 - 修改</div>
                 <div class="card-body">
                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.update', $category)" :bind="$category">
                         <div class="mt-3">
-                            <x:form::select class="form-select" name="parent_id" label="父選單" :options="$categories" />
+                            <x:form::select class="form-select" name="parent_id" label="父選單" :options="$categories" required />
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input name="name" label="選單名稱" />
+                            <x:form::input name="name" label="選單名稱" required />
                         </div>
                         <div class="mt-3">
-                            <x:form::input name="slug" label="選單連結" />
+                            <x:form::input name="slug" label="選單連結" required />
                         </div>
                         <div class="mt-3">
-                            <x:form::input type="number" name="sort" label="選單排序" />
+                            <x:form::input type="number" name="sort" label="選單排序" required />
                         </div>
 
                         <div class="mt-3">
                             <x:form::select class="form-control" name="status" label="啓用狀態"
-                                :options="[1 => '啓用', 0 => '停用']" />
+                                :options="[1 => '啓用', 0 => '停用']" required />
                         </div>
 
                         <div class="mt-3 text-center">
