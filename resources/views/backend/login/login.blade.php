@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>登入</title>
+    <title>後台登入</title>
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
@@ -27,7 +27,7 @@
                             <!-- Basic login form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="fw-light my-4">登入</h3>
+                                    <h3 class="fw-light my-4">後台登入</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Login form-->
