@@ -9,6 +9,7 @@ use App\Services\Service;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Str;
+use Intervention\Image\Laravel\Facades\Image;
 
 class ProductService extends Service
 {
@@ -80,7 +81,10 @@ class ProductService extends Service
     protected function uploadImage($image)
     {
         $imageName = Str::uuid()->toString() . '.' . $image->extension();
-        $image->move(public_path('images'), $imageName);
+
+        Image::read($image)->scale(640, 640)->save(public_path('images/' . $imageName));
+        
+        // $image->move(public_path('images'), $imageName);
         return $imageName;
     }
 }
