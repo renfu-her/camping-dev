@@ -53,7 +53,7 @@
                         <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                         使用者設定
                     </a>
-                    <a class="dropdown-item" href="#!">
+                    <a class="dropdown-item" href="{{ route('backend.logout') }}">
                         <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                         登 出
                     </a>
@@ -84,8 +84,8 @@
                 <!-- Sidenav Footer-->
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
-                        <div class="sidenav-footer-subtitle">Logged in as:</div>
-                        <div class="sidenav-footer-title">Valerie Luna</div>
+                        <div class="sidenav-footer-subtitle">登入名稱:</div>
+                        <div class="sidenav-footer-title">{{ Session::get('userName') }}</div>
                     </div>
                 </div>
             </nav>

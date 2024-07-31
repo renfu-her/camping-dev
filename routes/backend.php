@@ -5,7 +5,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AuthController;
 
-Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
+Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'adminAuth'], function () {
     Route::get('/', [ProductController::class, 'home'])->name('home');
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
