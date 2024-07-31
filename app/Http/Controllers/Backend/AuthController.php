@@ -28,16 +28,18 @@ class AuthController extends Controller
 
         if (empty($user)) {
 
-            return view('backend.login.login')->with(['error' => "使用者輸入錯誤或者不存在"]);
-        } elseif (Hash::check($data['password'], $user->password)) {
+            return redirect('/backend/login')->with('error', "使用者輸入錯誤或者不存在");
+        }
+
+        if (Hash::check($data['password'], $user->password)) {
 
             session()->put('userId', $user->id);
             session()->put('userName', $user->name);
             session()->put('userEmail', $user->email);
             return redirect('/backend/product');
-        } else {
-            return view('backend.login.login')->with(['error' => "密碼錯誤"]);
         }
+
+        return redirect('backend/login')->with('error', "密碼錯誤");
     }
 
     // 登出

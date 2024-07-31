@@ -71,6 +71,12 @@
     </script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
 
+    @if (Session::has('error'))
+        <script>
+            alert('{{ Session::get('error') }}');
+        </script>
+    @endif
+
     <script>
         $(function() {
 
