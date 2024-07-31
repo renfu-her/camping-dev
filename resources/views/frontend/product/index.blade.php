@@ -22,7 +22,7 @@
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="position-relative">
                             <div class="service-item rounded">
-                                <a href="#">
+                                <a href="{{ route('rent.detail', $product->id) }}">
                                     <div class="service-img rounded-top">
                                         <img src="{{ asset('images/' . $product->image) }}"
                                             class="img-fluid rounded-top w-100" alt="">
