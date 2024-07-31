@@ -60,7 +60,7 @@ class ProductService extends Service
             return $this;
         }
 
-        $request = $this->request->only(array_keys($this->rules['Product']))->toArray();
+        $request = $this->request->only(array_keys($this->rules['product']))->toArray();
 
         // 處理圖片上傳
         if ($this->request->hasFile('image')) {
