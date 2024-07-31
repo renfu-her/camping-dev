@@ -46,12 +46,12 @@
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>
-                                            @if(empty($product->image))
-                                            <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
-                                                style="width: 150px;">
+                                            @if (empty($product->image))
+                                                <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
+                                                    style="width: 150px;">
                                             @else
-                                            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
-                                                style="width: 150px;">
+                                                <img src="{{ asset('images/' . $product->image) }}"
+                                                    alt="{{ $product->name }}" style="width: 150px;">
                                             @endif
                                         </td>
                                         <td>{{ $product->status ? '啓用' : '停用' }}</td>
@@ -82,9 +82,6 @@
 @section('js')
     <script>
         window.addEventListener('DOMContentLoaded', event => {
-            // Simple-DataTables
-            // https://github.com/fiduswriter/Simple-DataTables/wiki
-
             const datatablesSimple = document.getElementById('dataTable');
             if (datatablesSimple) {
                 new simpleDatatables.DataTable(datatablesSimple);
