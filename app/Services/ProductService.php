@@ -42,11 +42,9 @@ class ProductService extends Service
 
         $request = $this->request->only(array_keys($this->rules['product']))->toArray();
 
-        dd($request, $this->request->file('image'));
-
         // 處理圖片上傳
-        if ($this->request->hasFile('image')) {
-            $request['image'] = $this->uploadImage($this->request->file('image'));
+        if (isset($this->request['image']) && $this->request['image'] instanceof \Illuminate\Http\UploadedFile) {
+            $request['image'] = $this->uploadImage($this->request['image']);
         }
 
         Product::create($request);
@@ -64,11 +62,10 @@ class ProductService extends Service
 
         $request = $this->request->only(array_keys($this->rules['product']))->toArray();
 
-        dd($request, $this->request->file('image'));
 
         // 處理圖片上傳
-        if ($this->request->hasFile('image')) {
-            $request['image'] = $this->uploadImage($this->request->file('image'));
+        if (isset($this->request['image']) && $this->request['image'] instanceof \Illuminate\Http\UploadedFile) {
+            $request['image'] = $this->uploadImage($this->request['image']);
         }
 
         $product = Product::find($this->dataId);
@@ -84,6 +81,6 @@ class ProductService extends Service
     {
         $imageName = Str::uuid()->toString() . '.' . $image->extension();
         $image->move(public_path('images'), $imageName);
-        return 'images/' . $imageName;
+        return $imageName;
     }
 }

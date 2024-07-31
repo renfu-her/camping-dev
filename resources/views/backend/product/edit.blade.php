@@ -32,6 +32,15 @@
                             <x:form::input name="name" label="產品名稱" required />
                         </div>
 
+                        @if (!empty($product->image))
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label for="text-name" class="form-label">圖片預覽</label> <br>
+                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
+                                        style="width: 250px;">
+                                </div>
+                            </div>
+                        @endif
                         <div class="mt-3">
                             <x:form::input type="file" name="image" label="圖片" required />
                         </div>

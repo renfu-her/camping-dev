@@ -50,7 +50,7 @@
                                             <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
                                                 style="width: 150px;">
                                             @else
-                                            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}"
+                                            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
                                                 style="width: 150px;">
                                             @endif
                                         </td>
