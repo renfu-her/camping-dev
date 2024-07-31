@@ -12,6 +12,12 @@ use App\Services\ProductService as Service;
 
 class ProductController extends Controller
 {
+
+    public function home()
+    {
+        return redirect('/backend/product');
+    }
+
     public function index()
     {
 
