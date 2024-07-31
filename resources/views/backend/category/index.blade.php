@@ -30,14 +30,14 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="dataTable">
+                        <table id="dataTable" class="cell-border">
                             <thead>
                                 <tr>
                                     <th>選單名稱</th>
                                     <th>選單連結</th>
                                     <th>選單排序</th>
                                     <th>啓用狀態</th>
-                                    <th>操作</th>
+                                    <th style="width: 20%">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,11 +58,10 @@
 
 @section('js')
     <script>
-        window.addEventListener('DOMContentLoaded', event => {
-            const datatablesSimple = document.getElementById('dataTable');
-            if (datatablesSimple) {
-                new simpleDatatables.DataTable(datatablesSimple);
-            }
+        new DataTable('#dataTable', {
+            language: {
+                url: '//cdn.datatables.net/plug-ins/2.1.2/i18n/zh-HANT.json',
+            },
         });
     </script>
 @endsection

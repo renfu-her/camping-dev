@@ -9,6 +9,7 @@
     <meta name="author" content="" />
     <title>後臺</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css">
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
@@ -98,7 +99,9 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('admin/js/simple-datatables.min.js') }}" crossorigin="anonymous"></script>
+    {{-- <script src="{{ asset('admin/js/simple-datatables.min.js') }}" crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.datatables.net/2.1.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.2/js/dataTables.dataTables.min.js"></script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
 
     <script src="https://assets.startbootstrap.com/js/sb-customizer.js"></script>
@@ -108,13 +111,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous">
     </script>
 
-    @if(Session::has('success'))
+    @if (Session::has('success'))
         <script>
             alert("{{ Session::get('success') }}");
         </script>
     @endif
 
-    @if(Session::has('error'))
+    @if (Session::has('error'))
         <script>
             alert("{{ Session::get('error') }}");
         </script>
