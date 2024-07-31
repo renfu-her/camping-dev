@@ -82,7 +82,7 @@ class ProductService extends Service
     {
         $imageName = Str::uuid()->toString() . '.' . $image->extension();
 
-        Image::read($image)->scale(640, 640)->save(public_path('images/' . $imageName));
+        Image::read($image)->scale(800, 600)->save(public_path('images/' . $imageName));
         
         // $image->move(public_path('images'), $imageName);
         return $imageName;
