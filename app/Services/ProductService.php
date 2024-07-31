@@ -64,6 +64,8 @@ class ProductService extends Service
 
         $request = $this->request->only(array_keys($this->rules['product']))->toArray();
 
+        dd($request, $this->request->file('image'));
+
         // 處理圖片上傳
         if ($this->request->hasFile('image')) {
             $request['image'] = $this->uploadImage($this->request->file('image'));
