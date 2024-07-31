@@ -62,6 +62,7 @@
             language: {
                 url: '//cdn.datatables.net/plug-ins/2.1.2/i18n/zh-HANT.json',
             },
+            ordering: false
         });
     </script>
 @endsection
