@@ -35,14 +35,27 @@
                         @if (!empty($product->image))
                             <div class="mt-3">
                                 <div class="mb-3">
-                                    <label for="text-name" class="form-label">圖片預覽</label> <br>
+                                    <label for="text-name" class="form-label">封面圖片預覽</label> <br>
                                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
                                         style="width: 250px;">
                                 </div>
                             </div>
                         @endif
                         <div class="mt-3">
-                            <x:form::input type="file" name="image" label="圖片" required />
+                            <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
+                        </div>
+
+                        @if (!empty($product->content_image))
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label for="text-name" class="form-label">內容圖片預覽</label> <br>
+                                    <img src="{{ asset('images/' . $product->content_image) }}"
+                                        alt="{{ $product->content_name }}" style="width: 250px;">
+                                </div>
+                            </div>
+                        @endif
+                        <div class="mt-3">
+                            <x:form::input type="file" name="content_image" label="內容圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
@@ -86,6 +99,7 @@
                 let cactegoty_id = $('input[name="category_id"]').val();
                 let name = $('input[name="name"]').val();
                 let image = $('input[name="image"]').val();
+                let contet_image = $('input[name="content_image"]').val();
                 let description = $('input[name="description"]').val();
                 let content = tinymce.get('content').getContent();
                 let sort = $('input[name="sort"]').val();
@@ -101,7 +115,11 @@
                 }
 
                 if (image == '') {
-                    errors.push('請上傳圖片');
+                    errors.push('請上傳封面圖片');
+                }
+                
+                if (content_image == '') {
+                    errors.push('請上傳內容圖片');
                 }
 
                 if (description == '') {

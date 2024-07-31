@@ -48,6 +48,10 @@ class ProductService extends Service
             $request['image'] = $this->uploadImage($this->request['image']);
         }
 
+        if (isset($this->request['content_image']) && $this->request['content_image'] instanceof \Illuminate\Http\UploadedFile) {
+            $request['content_image'] = $this->uploadImage($this->request['content_image'], 960, 430);
+        }
+
         Product::create($request);
 
         $this->setOk();
@@ -66,7 +70,11 @@ class ProductService extends Service
 
         // 處理圖片上傳
         if (isset($this->request['image']) && $this->request['image'] instanceof \Illuminate\Http\UploadedFile) {
-            $request['image'] = $this->uploadImage($this->request['image']);
+            $request['image'] = $this->uploadImage($this->request['image'], 800, 600);
+        }
+
+        if (isset($this->request['content_image']) && $this->request['content_image'] instanceof \Illuminate\Http\UploadedFile) {
+            $request['content_image'] = $this->uploadImage($this->request['content_image'], 960, 430);
         }
 
         $product = Product::find($this->dataId);
@@ -78,12 +86,12 @@ class ProductService extends Service
         return $this;
     }
 
-    protected function uploadImage($image)
+    protected function uploadImage($image, $width = 800, $height = 600)
     {
         $imageName = Str::uuid()->toString() . '.' . $image->extension();
 
-        Image::read($image)->scale(800, 600)->save(public_path('images/' . $imageName));
-        
+        Image::read($image)->scale($width, $height)->save(public_path('images/' . $imageName));
+
         // $image->move(public_path('images'), $imageName);
         return $imageName;
     }

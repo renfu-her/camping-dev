@@ -55,66 +55,6 @@
     </div>
     <!-- End:Topbar-->
 
-    <!-- Start:主選單-->
-    {{-- <div class="container-fluid fixed-top position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="text-white m-0"><img src="{{ asset('img/logo.svg') }}" class="img-fluid" width="250px"></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">綠色循環服務</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="equipment-recycling.html" class="dropdown-item">裝備回收</a>
-                            <a href="#" class="dropdown-item">裝備保養延壽維修</a>
-                            <a href="#" class="dropdown-item">以舊換新</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">綠色裝備租賃</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="tent.html" class="dropdown-item">各類帳篷</a>
-                            <a href="#" class="dropdown-item">睡袋與寢具</a>
-                            <a href="#" class="dropdown-item">烹飪設配</a>
-                            <a href="#" class="dropdown-item">照明及休閒(桌椅)設備</a>
-                            <a href="recycle.html" class="dropdown-item">循環材料新創商品</a>
-                        </div>
-                    </div>
-
-                    <a href="friendly-campsite.html" class="nav-item nav-link">友善營地資訊</a>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">AI智慧排程</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="#" class="dropdown-item">依據需求推薦</a>
-                            <a href="#" class="dropdown-item">營地與裝備建議</a>
-                            <a href="#" class="dropdown-item">情報資訊(如氣候路況)</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">綠色露營推廣服務</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="user-operation-sharing.html" class="dropdown-item">用戶經營分享</a>
-                            <a href="#" class="dropdown-item">資訊建議與問答</a>
-                            <a href="#" class="dropdown-item">裝備交換</a>
-                            <a href="#" class="dropdown-item">社交互動</a>
-                        </div>
-                    </div>
-
-                </div>
-                <a href="#" class="btn btn-green rounded-circle text-white flex-wrap flex-sm-shrink-0"
-                    data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></a>
-        </nav>
-    </div> --}}
-    <!-- End:主選單-->
-
     <!-- 主選單 -->
     @include('partials.menu')
 

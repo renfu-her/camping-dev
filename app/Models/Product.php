@@ -13,6 +13,7 @@ class Product extends Model
         'name',
         'description',
         'content',
+        'content_image',
         'image',
         'sort',
         'status',

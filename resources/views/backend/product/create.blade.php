@@ -34,7 +34,11 @@
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="file" name="image" label="圖片" required />
+                            <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
+                        </div>
+
+                        <div class="mt-3">
+                            <x:form::input type="file" name="content_image" label="內容圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
@@ -77,8 +81,9 @@
                 let cactegoty_id = $('input[name="category_id"]').val();
                 let name = $('input[name="name"]').val();
                 let image = $('input[name="image"]').val();
+                let contet_image = $('input[name="content_image"]').val();
                 let description = $('input[name="description"]').val();
-                let content = tinymce.get('content').getContent(); 
+                let content = tinymce.get('content').getContent();
                 let sort = $('input[name="sort"]').val();
                 let status = $('input[name="status"]').val();
                 let errors = [];
@@ -93,6 +98,10 @@
 
                 if (image == '') {
                     errors.push('請上傳圖片');
+                }
+
+                if (contet_image == '') {
+                    errors.push('請上傳內容圖片');
                 }
 
                 if (description == '') {

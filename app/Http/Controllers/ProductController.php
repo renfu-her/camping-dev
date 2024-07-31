@@ -21,6 +21,19 @@ class ProductController extends Controller
 
         $products = Product::where('category_id', $category->id)->with('category')->paginate(12);
 
-        return view('frontend.product', compact('products', 'category'));
+        return view('frontend.product.index', compact('products', 'category'));
+    }
+
+    public function detail($productId)
+    {
+
+        $product = Product::where('id', $productId)->with('category')->first();
+        $category = Category::where('id', $product->category_id)->first();
+
+        if (!$product) {
+            return redirect('/')->with('error', '商品不存在！');
+        }
+
+        return view('frontend.product.detail', compact('product', 'category'));
     }
 }

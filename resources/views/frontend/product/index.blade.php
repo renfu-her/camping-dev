@@ -24,8 +24,8 @@
                             <div class="service-item rounded">
                                 <a href="#">
                                     <div class="service-img rounded-top">
-                                        <img src="{{ asset('img/recycle/r01.jpg') }}" class="img-fluid rounded-top w-100"
-                                            alt="">
+                                        <img src="{{ asset('images/' . $product->image) }}"
+                                            class="img-fluid rounded-top w-100" alt="">
                                     </div>
                                 </a>
                                 <div class="service-content rounded-bottom bg-light p-4">
@@ -33,7 +33,7 @@
                                         <h5 class="mb-4">{{ $product->name }}</h5>
                                         <p class="mb-4">{{ $product->description }}...</p>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <a href="#"
+                                            <a href="{{ route('rent.detail', $product->id) }}"
                                                 class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
                                         </div>
                                     </div>
@@ -44,18 +44,7 @@
                 @endforeach
 
                 {{ $products->links('pagination.custom') }}
-                {{-- <div class="col-12 mt-5">
-                    <div class="pagination d-flex justify-content-center ">
-                        <a href="#" class="rounded-circle">&laquo;</a>
-                        <a href="#" class="active rounded-circle">1</a>
-                        <a href="#" class="rounded-circle">2</a>
-                        <a href="#" class="rounded-circle">3</a>
-                        <a href="#" class="rounded-circle">4</a>
-                        <a href="#" class="rounded-circle">5</a>
-                        <a href="#" class="rounded-circle">6</a>
-                        <a href="#" class="rounded-circle">&raquo;</a>
-                    </div>
-                </div> --}}
+
             </div>
         </div>
         <!-- End:循環材料新創商品 -->

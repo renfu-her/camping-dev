@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'rent', 'as' => 'rent.'], function () {
     Route::get('/{product_name}', [ProductController::class, 'index'])->name('index');
+    Route::get('/detail/{product_id}', [ProductController::class, 'detail'])->name('detail');
 });
 
 Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
