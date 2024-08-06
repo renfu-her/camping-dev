@@ -9,7 +9,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
-                                內容管理 - 新增
+                                使用者 - 新增
                             </h1>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">內容管理 - 新增</div>
+                <div class="card-header">使用者 - 新增</div>
                 <div class="card-body">
                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.user.store')">
