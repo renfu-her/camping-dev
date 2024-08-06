@@ -43,10 +43,12 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a href="{{ route('backend.user.edit', $user->id) }}"
-                                                class="btn btn-edit">編輯</a>
-                                            <form action="{{ route('backend.user.destroy', $user->id) }}"
-                                                method="POST" class="d-inline">
+                                            @if ($user->id != 1)
+                                                <a href="{{ route('backend.user.edit', $user->id) }}"
+                                                    class="btn btn-edit">編輯</a>
+                                            @endif
+                                            <form action="{{ route('backend.user.destroy', $user->id) }}" method="POST"
+                                                class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-remove">刪除</button>
