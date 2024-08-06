@@ -45,3 +45,20 @@
     background-color: #e04865;
     color: #fff;
 }
+
+.sidenav-dark {
+    background-color: #6a7d64 !important;
+    color: #fff;
+}
+
+.sidenav-dark .sidenav-menu .nav-link {
+    color: #fff !important;
+}
+
+.sidenav-dark .sidenav-menu .nav-link .nav-link-icon {
+    color: #fff !important;
+}
+
+.sidenav-dark .sidenav-menu .sidenav-menu-heading {
+    color: #fff !important;
+}

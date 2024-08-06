@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-
+        <div style="margin-bottom: 20px"></div>
     </main>
 @endsection
 

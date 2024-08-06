@@ -29,7 +29,7 @@
         <!-- * * Tip * * You can use text or an image for your navbar brand.-->
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">後臺</a>
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">綠色露營共享平台管理</a>
         <!-- Navbar Search Input-->
         <!-- * * Note: * * Visible only on and above the lg breakpoint-->
         {{-- <form class="form-inline me-auto d-none d-lg-block me-3">
@@ -67,7 +67,7 @@
             <nav class="sidenav shadow-right sidenav-dark">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
-                        <div class="sidenav-menu-heading">管理界面</div>
+                        {{-- <div class="sidenav-menu-heading">管理界面</div> --}}
                         <!-- Sidenav Accordion (Dashboard)-->
                         <a class="nav-link collapsed" href="{{ route('backend.category.index') }}">
                             <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
@@ -79,6 +79,13 @@
                         <a class="nav-link collapsed" href="{{ route('backend.product.index') }}">
                             <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
                             內容管理
+                        </a>
+                    </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="{{ route('backend.user.index') }}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
+                            帳號管理
                         </a>
                     </div>
                 </div>

@@ -24,8 +24,9 @@
                 <div class="card-body">
                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.store')">
-                        <div class="mt-3" style="display: none" >
-                            <x:form::select class="form-select" name="parent_id" label="子類別" :options="[5 => 5]" :selected=[5] />
+                        <div class="mt-3" style="display: none">
+                            <x:form::select class="form-select" name="parent_id" label="子類別" :options="[5 => 5]"
+                                :selected=[5] />
                         </div>
 
                         <div class="mt-3">
@@ -54,5 +55,6 @@
                 </div>
             </div>
         </div>
+        <div style="margin-bottom: 20px"></div>
     </main>
 @endsection
