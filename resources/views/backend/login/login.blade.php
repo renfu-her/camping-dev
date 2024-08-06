@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>後台登入</title>
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.svg') }}" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous">
@@ -17,7 +17,7 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 </head>
 
-<body class="bg-primary">
+<body style="background-color: #6a7d64 ">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -26,8 +26,10 @@
                         <div class="col-lg-5">
                             <!-- Basic login form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header d-flex justify-content-center align-items-center">
-                                    <h3 class="my-4">後台登入</h3>
+                                <div class="card-header row d-flex justify-content-center align-items-center">
+                                    <img src="{{ asset('admin/assets/img/favicon.svg') }}" class="w-25"
+                                        alt="">
+                                    <h3 class="my-4 text-center">後台登入</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Login form-->
