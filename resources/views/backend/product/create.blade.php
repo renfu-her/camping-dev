@@ -9,7 +9,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
-                                產品 - 新增
+                                內容管理 - 新增
                             </h1>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">產品 - 新增</div>
+                <div class="card-header">內容管理 - 新增</div>
                 <div class="card-body">
                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.product.store')">
@@ -34,11 +34,11 @@
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
+                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="file" name="content_image" label="內容圖片 (建議尺寸：960 * 430)" required />
+                            <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
                         </div>
 
                         <div class="mt-3">
@@ -62,7 +62,7 @@
                             <x:form::button.link class="btn-secondary" href="{{ route('backend.product.index') }}">取消
                             </x:form::button.link>
 
-                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
+                            <x:form::button.submit class="btn-confirm" id="submit">確認存檔</x:form::button.submit>
 
                         </div>
                     </x:form::form>

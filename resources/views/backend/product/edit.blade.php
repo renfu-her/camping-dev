@@ -9,7 +9,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
-                                產品 - 修改
+                                內容管理 - 修改
                             </h1>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">產品 - 修改</div>
+                <div class="card-header">內容管理 - 修改</div>
                 <div class="card-body">
                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.product.update', $product)" :bind="$product">
@@ -32,6 +32,19 @@
                             <x:form::input name="name" label="產品名稱" required />
                         </div>
 
+                        @if (!empty($product->content_image))
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label for="text-name" class="form-label">主題圖片預覽</label> <br>
+                                    <img src="{{ asset('images/' . $product->content_image) }}"
+                                        alt="{{ $product->content_name }}" style="width: 250px;">
+                                </div>
+                            </div>
+                        @endif
+                        <div class="mt-3">
+                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
+                        </div>
+                        
                         @if (!empty($product->image))
                             <div class="mt-3">
                                 <div class="mb-3">
@@ -43,19 +56,6 @@
                         @endif
                         <div class="mt-3">
                             <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
-                        </div>
-
-                        @if (!empty($product->content_image))
-                            <div class="mt-3">
-                                <div class="mb-3">
-                                    <label for="text-name" class="form-label">內容圖片預覽</label> <br>
-                                    <img src="{{ asset('images/' . $product->content_image) }}"
-                                        alt="{{ $product->content_name }}" style="width: 250px;">
-                                </div>
-                            </div>
-                        @endif
-                        <div class="mt-3">
-                            <x:form::input type="file" name="content_image" label="內容圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
@@ -79,7 +79,7 @@
                             <x:form::button.link class="btn-secondary" href="{{ route('backend.product.index') }}">取消
                             </x:form::button.link>
 
-                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
+                            <x:form::button.submit class="btn-confirm" id="submit">確認存檔</x:form::button.submit>
 
                         </div>
                     </x:form::form>

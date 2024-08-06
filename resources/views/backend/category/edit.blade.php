@@ -9,7 +9,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
-                                選單 - 修改
+                                類別 - 修改
                             </h1>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">選單 - 修改</div>
+                <div class="card-header">類別 - 修改</div>
                 <div class="card-body">
                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.update', $category)" :bind="$category">
@@ -47,7 +47,7 @@
                             {{-- <x:form::button.link class="btn-secondary" href="{{ route('backend.category.index') }}">取消
                             </x:form::button.link> --}}
 
-                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
+                            <x:form::button.submit class="btn-confirm" id="submit">確認存檔</x:form::button.submit>
 
                         </div>
                     </x:form::form>

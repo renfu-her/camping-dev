@@ -35,3 +35,13 @@
     background-color: #6a7d64;
     color: #fff;
 }
+
+.btn-confirm {
+    background-color: #e04865;
+    color: #fff;
+}
+
+.btn-confirm:hover {
+    background-color: #e04865;
+    color: #fff;
+}

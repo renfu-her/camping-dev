@@ -21,20 +21,19 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">產品列表維護</div>
+                <div class="card-header">內容管理維護</div>
                 <div class="card-body">
                     <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
                     <a href="{{ route('backend.product.create') }}" class="btn btn-primary">
-                        <i class="fa-regular fa-square-plus"></i>&nbsp;新增產品</a>
-                    <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>&nbsp;刪除</a>
+                        <i class="fa-regular fa-square-plus"></i>&nbsp;新增內容管理</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="dataTable" class="cell-border">
                             <thead>
                                 <tr>
-                                    <th>產品名稱</th>
-                                    <th>選單名稱</th>
+                                    <th>標題名稱</th>
+                                    <th>類別名稱</th>
                                     <th>圖片</th>
                                     <th>啓用狀態</th>
                                     <th style="width: 20%">操作</th>
@@ -57,12 +56,12 @@
                                         <td>{{ $product->status ? '啓用' : '停用' }}</td>
                                         <td>
                                             <a href="{{ route('backend.product.edit', $product->id) }}"
-                                                class="btn btn-primary">編輯</a>
+                                                class="btn btn-edit">編輯</a>
                                             <form action="{{ route('backend.product.destroy', $product->id) }}"
                                                 method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                                <button type="submit" class="btn btn-remove">刪除</button>
                                             </form>
                                         </td>
                                     </tr>
