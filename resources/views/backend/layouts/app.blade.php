@@ -11,7 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css">
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.svg') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/custom.css?t=' . time()) }}">
 
 
     @yield('css')
@@ -70,7 +71,7 @@
                         <!-- Sidenav Accordion (Dashboard)-->
                         <a class="nav-link collapsed" href="{{ route('backend.category.index') }}">
                             <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
-                            選單管理
+                            類別管理
                         </a>
                     </div>
                     <div class="nav accordion" id="accordionSidenav">

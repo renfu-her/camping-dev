@@ -24,9 +24,8 @@
                 <div class="card-header">選單列表維護</div>
                 <div class="card-body">
                     <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
-                    <a href="{{ route('backend.category.create') }}" class="btn btn-primary">
+                    <a href="{{ route('backend.category.create') }}" class="btn btn-add">
                         <i class="fa-regular fa-square-plus"></i>&nbsp;新增選單</a>
-                    <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>&nbsp;刪除</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -41,8 +40,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($tree as $category)
-                                    @include('backend.category.category-row', ['category' => $category])
+                                @foreach ($categories as $category)
+                                    <tr>
+                                        <td>{{ $category->name }}</td>
+                                        <td>{{ $category->slug }}</td>
+                                        <td>{{ $category->sort }}</td>
+                                        <td>{{ $category->status == 1 ? '啓用' : '停用' }}</td>
+                                        <td>
+                                            <a href="{{ route('backend.category.edit', $category->id) }}"
+                                                class="btn btn-edit">編輯</a>
+                                            <form action="{{ route('backend.category.destroy', $category->id) }}"
+                                                method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-remove">刪除</button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

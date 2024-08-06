@@ -1,0 +1,37 @@
+.btn-add {
+    background-color: #e04865;
+    color: #fff;
+}
+.btn-add:hover {
+    background-color: #e04865;
+    color: #fff;
+}
+
+.btn-edit {
+    background-color: #e5924b;
+    color: #fff;
+}
+.btn-edit:hover {
+    background-color: #e5924b;
+    color: #fff;
+}
+
+.btn-remove {
+    background-color: #858795;
+    color: #fff;
+}
+
+.btn-remove:hover {
+    background-color: #858795;
+    color: #fff;
+}
+
+.left-nav {
+    background-color: #6a7d64;
+    color: #fff;
+}
+
+.left-nav:hover {
+    background-color: #6a7d64;
+    color: #fff;
+}

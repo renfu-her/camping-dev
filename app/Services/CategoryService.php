@@ -37,6 +37,7 @@ class CategoryService extends Service
         }
 
         $request = $this->request->only(array_keys($this->rules['category']))->toArray();
+        
 
         Category::create($request);
 

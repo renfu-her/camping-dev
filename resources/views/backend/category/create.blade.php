@@ -24,8 +24,8 @@
                 <div class="card-body">
                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.store')">
-                        <div class="mt-3">
-                            <x:form::select class="form-select" name="parent_id" label="父選單" :options="$categories" required/>
+                        <div class="mt-3" style="display: none" >
+                            <x:form::select class="form-select" name="parent_id" label="子類別" :options="[5 => 5]" :selected=[5] />
                         </div>
 
                         <div class="mt-3">
@@ -44,8 +44,8 @@
                         </div>
 
                         <div class="mt-3 text-center">
-                            <x:form::button.link class="btn-secondary" href="{{ route('backend.category.index') }}">取消
-                            </x:form::button.link>
+                            {{-- <x:form::button.link class="btn-secondary" href="{{ route('backend.category.index') }}">取消
+                            </x:form::button.link> --}}
 
                             <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
 
