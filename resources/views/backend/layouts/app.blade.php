@@ -78,7 +78,7 @@
                         <!-- Sidenav Accordion (Dashboard)-->
                         <a class="nav-link collapsed" href="{{ route('backend.product.index') }}">
                             <div class="nav-link-icon"><i class="fa-solid fa-bars"></i></div>
-                            產品管理
+                            內容管理
                         </a>
                     </div>
                 </div>

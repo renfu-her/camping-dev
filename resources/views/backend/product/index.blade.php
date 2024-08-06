@@ -24,7 +24,7 @@
                 <div class="card-header">內容管理維護</div>
                 <div class="card-body">
                     <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
-                    <a href="{{ route('backend.product.create') }}" class="btn btn-primary">
+                    <a href="{{ route('backend.product.create') }}" class="btn btn-add">
                         <i class="fa-regular fa-square-plus"></i>&nbsp;新增內容管理</a>
                 </div>
                 <div class="card-body">

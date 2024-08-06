@@ -59,8 +59,8 @@
                         </div>
 
                         <div class="mt-3 text-center">
-                            <x:form::button.link class="btn-secondary" href="{{ route('backend.product.index') }}">取消
-                            </x:form::button.link>
+                            {{-- <x:form::button.link class="btn-secondary" href="{{ route('backend.product.index') }}">取消
+                            </x:form::button.link> --}}
 
                             <x:form::button.submit class="btn-confirm" id="submit">確認存檔</x:form::button.submit>
 
