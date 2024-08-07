@@ -9,7 +9,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
-                                產品列表
+                                內容管理維護
                             </h1>
                         </div>
                         {{-- <div class="col-12 col-xl-auto mb-3">Optional page header content</div> --}}
@@ -21,7 +21,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">內容管理維護</div>
+                {{-- <div class="card-header">內容管理維護</div> --}}
                 <div class="card-body">
                     <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
                     <a href="{{ route('backend.product.create') }}" class="btn btn-add">

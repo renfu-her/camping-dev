@@ -21,7 +21,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">使用者管理</div>
+                {{-- <div class="card-header">使用者管理</div> --}}
                 <div class="card-body">
                     <!-- // TODO: 這裏要增加兩個按鈕，一個是新增選單，一個是刪除 -->
                     <a href="{{ route('backend.user.create') }}" class="btn btn-add">
