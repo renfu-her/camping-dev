@@ -33,7 +33,8 @@
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="password" name="password" label="密碼（如果不變就留空白，規則：必須英文數字，要一個大寫字母，小寫字母，長度大於 6）" required />
+                            <x:form::input type="password" name="password" value=""
+                                label="密碼（如果不變就留空白，規則：必須英文數字，要一個大寫字母，小寫字母，長度大於 6）" required />
                         </div>
 
                         <div class="mt-3 text-center">
