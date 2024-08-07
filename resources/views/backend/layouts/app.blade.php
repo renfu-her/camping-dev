@@ -50,10 +50,10 @@
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
                     aria-labelledby="navbarDropdownUserImage">
 
-                    <a class="dropdown-item" href="#!">
+                    {{-- <a class="dropdown-item" href="#!">
                         <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                         使用者設定
-                    </a>
+                    </a> --}}
                     <a class="dropdown-item" href="{{ route('backend.logout') }}">
                         <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                         登 出
