@@ -41,7 +41,7 @@ class UserService extends Service
             return $this;
         }
 
-        $request = $this->request->only(array_keys($this->rules['user'], $this->rules['password']))->toArray();
+        $request = $this->request->only(array_keys($this->rules['user']), array_keys($this->rules['password']))->toArray();
 
         // password 要 Hash
         $request['password'] = Hash::make($this->request['password']);
@@ -70,5 +70,4 @@ class UserService extends Service
 
         return $this;
     }
-
 }
