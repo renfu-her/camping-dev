@@ -33,7 +33,8 @@
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="password" name="password" label="密碼（規則：必須英文數字，要一個大寫字母，小寫字母，長度大於 6）" required />
+                            <x:form::input type="password" name="password" label="密碼（規則：必須英文數字，要一個大寫字母，小寫字母，長度大於 6）"
+                                required />
                         </div>
 
                         <div class="mt-3 text-center">
@@ -75,6 +76,25 @@
                     errors.push('密碼必須包含至少一個大寫字母、一個小寫字母，且長度大於 6 個字符。');
                 }
 
+                // Synchronous AJAX request
+                let emailExists = false;
+                $.ajax({
+                    url: '/api/user',
+                    method: 'POST',
+                    data: {
+                        email: email
+                    },
+                    async: false, // This makes the request synchronous
+                    success: function(data) {
+                        if (data.status == 'success') {
+                            emailExists = true;
+                        }
+                    }
+                });
+
+                if (emailExists) {
+                    errors.push('E-mail 已經存在');
+                }
 
                 if (errors.length > 0) {
                     alert(errors.join('\n'));
