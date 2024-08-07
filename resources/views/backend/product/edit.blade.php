@@ -32,18 +32,6 @@
                             <x:form::input name="name" label="產品名稱" required />
                         </div>
 
-                        @if (!empty($product->content_image))
-                            <div class="mt-3">
-                                <div class="mb-3">
-                                    <label for="text-name" class="form-label">主題圖片預覽</label> <br>
-                                    <img src="{{ asset('images/' . $product->content_image) }}"
-                                        alt="{{ $product->content_name }}" style="width: 250px;">
-                                </div>
-                            </div>
-                        @endif
-                        <div class="mt-3">
-                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
-                        </div>
 
                         @if (!empty($product->image))
                             <div class="mt-3">
@@ -60,6 +48,19 @@
 
                         <div class="mt-3">
                             <x:form::input name="description" label="簡短說明名稱 (字數：30個字)" maxlength="30" required />
+                        </div>
+
+                        @if (!empty($product->content_image))
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label for="text-name" class="form-label">主題圖片預覽</label> <br>
+                                    <img src="{{ asset('images/' . $product->content_image) }}"
+                                        alt="{{ $product->content_name }}" style="width: 250px;">
+                                </div>
+                            </div>
+                        @endif
+                        <div class="mt-3">
+                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
@@ -117,7 +118,7 @@
                 if (image == '') {
                     errors.push('請上傳封面圖片');
                 }
-                
+
                 if (content_image == '') {
                     errors.push('請上傳內容圖片');
                 }

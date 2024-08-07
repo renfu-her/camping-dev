@@ -34,15 +34,15 @@
                         </div>
 
                         <div class="mt-3">
-                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
-                        </div>
-
-                        <div class="mt-3">
                             <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
                         </div>
 
                         <div class="mt-3">
                             <x:form::input name="description" label="簡短說明名稱 (字數：30個字)" maxlength="30" required />
+                        </div>
+
+                        <div class="mt-3">
+                            <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
                         </div>
 
                         <div class="mt-3">
