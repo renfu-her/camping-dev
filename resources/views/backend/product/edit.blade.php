@@ -33,15 +33,20 @@
                         </div>
 
 
-                        @if (!empty($product->image))
-                            <div class="mt-3">
-                                <div class="mb-3">
-                                    <label for="text-name" class="form-label">封面圖片預覽</label> <br>
+
+                        <div class="mt-3">
+                            <div class="mb-3">
+                                <label for="text-name" class="form-label">封面圖片預覽</label> <br>
+                                @if (!empty($product->image))
                                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
                                         style="width: 250px;">
-                                </div>
+                                @else
+                                    <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
+                                        style="width: 250px;">
+                                @endif
                             </div>
-                        @endif
+                        </div>
+
                         <div class="mt-3">
                             <x:form::input type="file" name="image" label="封面圖片 (建議尺寸：800 * 600)" required />
                         </div>
@@ -50,15 +55,20 @@
                             <x:form::input name="description" label="簡短說明名稱 (字數：30個字)" maxlength="30" required />
                         </div>
 
-                        @if (!empty($product->content_image))
-                            <div class="mt-3">
-                                <div class="mb-3">
-                                    <label for="text-name" class="form-label">主題圖片預覽</label> <br>
+
+                        <div class="mt-3">
+                            <div class="mb-3">
+                                <label for="text-name" class="form-label">主題圖片預覽</label> <br>
+                                @if (!empty($product->content_image))
                                     <img src="{{ asset('images/' . $product->content_image) }}"
                                         alt="{{ $product->content_name }}" style="width: 250px;">
-                                </div>
+                                @else
+                                    <img src="{{ asset('img/no-image.png') }}" alt="{{ $product->name }}"
+                                        style="width: 250px;">
+                                @endif
                             </div>
-                        @endif
+                        </div>
+
                         <div class="mt-3">
                             <x:form::input type="file" name="content_image" label="主題圖片 (建議尺寸：960 * 430)" required />
                         </div>
