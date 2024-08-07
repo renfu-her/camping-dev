@@ -64,6 +64,11 @@ class UserService extends Service
 
         $user = User::find($this->dataId);
 
+        // password 要 Hash
+        if (isset($this->request['password'])) {
+            $request['password'] = Hash::make($this->request['password']);
+        }
+
         $user->update($request);
 
         $this->setOk();
