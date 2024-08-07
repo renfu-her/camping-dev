@@ -19,7 +19,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">內容管理 - 修改</div>
+                {{-- <div class="card-header">內容管理 - 修改</div> --}}
                 <div class="card-body">
                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.product.update', $product)" :bind="$product">

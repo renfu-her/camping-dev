@@ -19,7 +19,7 @@
         <div class="container-xl px-4 mt-4">
             <div class="card">
 
-                <div class="card-header">類別 - 修改</div>
+                {{-- <div class="card-header">類別 - 修改</div> --}}
                 <div class="card-body">
                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                         :action="route('backend.category.update', $category)" :bind="$category">
