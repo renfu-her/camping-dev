@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Support\Facades\Hash;
 
 class UserService extends Service
 {
@@ -40,7 +41,10 @@ class UserService extends Service
             return $this;
         }
 
-        $request = $this->request->only(array_keys($this->rules['user']))->toArray();
+        $request = $this->request->only(array_keys($this->rules['user'], $this->rules['password']))->toArray();
+
+        // password 要 Hash
+        $request['password'] = Hash::make($this->request['password']);
 
         User::create($request);
 
