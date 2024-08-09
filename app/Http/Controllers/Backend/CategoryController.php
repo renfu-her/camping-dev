@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::where('parent_id', 5)->get();
+        $categories = Category::where('parent_id', 5)->orderBy('sort')->get();
 
         // Create a tree structure
         // $tree = $this->buildCategoryTree($categories);
@@ -46,7 +46,7 @@ class CategoryController extends Controller
     public function create()
     {
 
-        $categories = ['0' => '新增子類別'] + Category::where('parent_id', 5)->get()->pluck('name', 'id')->toArray();
+        $categories = ['0' => '新增子類別'] + Category::where('parent_id', 5)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
 
         return view('backend.category.create', compact('categories'));
     }
