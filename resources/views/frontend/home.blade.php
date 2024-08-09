@@ -44,11 +44,11 @@
                         <div class="position-relative">
                             <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">
                                 {{ $product->category->name }}</div>
-                            <div class="service-item rounded">
+                            <div class="service-item rounded" >
                                 <a href="{{ route('rent.detail', $product->id) }}">
                                     <div class="service-img rounded-top">
                                         <img src="{{ asset('images/' . $product->image) }}"
-                                            class="img-fluid rounded-top w-100" alt="">
+                                            class="img-fluid rounded-top w-100" style="height: 230px" alt="">
                                     </div>
                                 </a>
                                 <div class="service-content rounded-bottom bg-light p-4">
