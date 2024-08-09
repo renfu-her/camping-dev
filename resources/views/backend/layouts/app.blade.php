@@ -88,6 +88,41 @@
                             帳號管理
                         </a>
                     </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="#" style="color: #cbcbcb !important">
+                            <div class="nav-link-icon"></div>
+                            首頁管理
+                        </a>
+                    </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="#" style="color: #cbcbcb !important">
+                            <div class="nav-link-icon"></div>
+                            綠色循環服務
+                        </a>
+                    </div>
+                    <div class="nav accordion"  id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="#" style="color: #cbcbcb !important">
+                            <div class="nav-link-icon"></div>
+                            友善營地資訊
+                        </a>
+                    </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="#" style="color: #cbcbcb !important">
+                            <div class="nav-link-icon"></div>
+                            AI智慧排程
+                        </a>
+                    </div>
+                    <div class="nav accordion" id="accordionSidenav">
+                        <!-- Sidenav Accordion (Dashboard)-->
+                        <a class="nav-link collapsed" href="#" style="color: #cbcbcb !important">
+                            <div class="nav-link-icon"></div>
+                            綠色露營推廣服務
+                        </a>
+                    </div>
                 </div>
                 <!-- Sidenav Footer-->
                 <div class="sidenav-footer">

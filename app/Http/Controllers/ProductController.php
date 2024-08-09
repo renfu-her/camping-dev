@@ -10,10 +10,10 @@ use App\Models\Category;
 class ProductController extends Controller
 {
 
-    public function index(Request $request, $productName)
+    public function index(Request $request, $productId)
     {
 
-        $category = Category::where('slug', 'like', '%' . $productName . '%')->first();
+        $category = Category::where('id', $productId)->first();
 
         if (!$category) {
             return redirect('/')->with('error', '選單錯誤！');
