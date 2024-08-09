@@ -105,6 +105,29 @@
     <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
     <script>
         $(function() {
+            tinymce.init({
+                selector: 'textarea',
+                height: 800,
+                plugins: [
+                    'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
+                    'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
+                    'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'help'
+                ],
+                toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                    'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+                    'forecolor backcolor emoticons | help',
+                menu: {
+                    favs: {
+                        title: 'My Favorites',
+                        items: 'code visualaid | searchreplace | emoticons'
+                    }
+                },
+                language: 'zh_TW',
+                promotion: false,
+                images_upload_url: '/image/upload',
+                images_upload_handler: my_image_upload_handler,
+            });
+
             $('#form_post').on('submit', function() {
 
                 let cactegoty_id = $('input[name="category_id"]').val();
@@ -151,29 +174,9 @@
                 }
             });
 
-            tinymce.init({
-                selector: 'textarea',
-                height: 800,
-                plugins: [
-                    'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
-                    'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
-                    'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'help'
-                ],
-                toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
-                    'forecolor backcolor emoticons | help',
-                menu: {
-                    favs: {
-                        title: 'My Favorites',
-                        items: 'code visualaid | searchreplace | emoticons'
-                    }
-                },
-                language: 'zh_TW',
-                promotion: false,
-                images_upload_url: '/image/upload',
-                images_upload_handler: my_image_upload_handler,
-            });
+
         });
+
 
         const my_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();

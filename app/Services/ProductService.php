@@ -79,6 +79,8 @@ class ProductService extends Service
 
         $product = Product::find($this->dataId);
 
+        dd($request);
+
         $product->update($request);
 
         $this->setOk();
