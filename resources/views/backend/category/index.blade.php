@@ -32,8 +32,8 @@
                         <table id="dataTable" class="cell-border">
                             <thead>
                                 <tr>
+                                    <th style="width: 10%">選單 ID</th>
                                     <th>選單名稱</th>
-                                    <th>選單連結</th>
                                     <th>選單排序</th>
                                     <th>啓用狀態</th>
                                     <th style="width: 20%">操作</th>
@@ -42,8 +42,8 @@
                             <tbody>
                                 @foreach ($categories as $category)
                                     <tr>
+                                        <td>{{ $category->id }}</td>
                                         <td>{{ $category->name }}</td>
-                                        <td>{{ $category->slug }}</td>
                                         <td>{{ $category->sort }}</td>
                                         <td>{{ $category->status == 1 ? '啓用' : '停用' }}</td>
                                         <td>
