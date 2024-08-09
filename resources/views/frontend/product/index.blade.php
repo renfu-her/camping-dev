@@ -25,7 +25,7 @@
                                 <a href="{{ route('rent.detail', $product->id) }}">
                                     <div class="service-img rounded-top">
                                         <img src="{{ asset('images/' . $product->image) }}"
-                                            class="img-fluid rounded-top w-100" alt="">
+                                            class="img-fluid rounded-top w-100" syle="height: 230px" alt="">
                                     </div>
                                 </a>
                                 <div class="service-content rounded-bottom bg-light p-4">
