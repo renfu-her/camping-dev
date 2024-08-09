@@ -44,7 +44,7 @@
                         <div class="position-relative">
                             <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">
                                 {{ $product->category->name }}</div>
-                            <div class="service-item rounded" >
+                            <div class="service-item rounded">
                                 <a href="{{ route('rent.detail', $product->id) }}">
                                     <div class="service-img rounded-top">
                                         <img src="{{ asset('images/' . $product->image) }}"
@@ -66,7 +66,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-12 text-center mt-5"><!--預設本單元第一類-->>
+            <div class="col-12 text-center mt-5"><!--預設本單元第一類-->
                 <a class="btn btn-green rounded-pill text-white py-3 px-5" href="tent.html">更多資訊</a>
             </div>
         </div>
