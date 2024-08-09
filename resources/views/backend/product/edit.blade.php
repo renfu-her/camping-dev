@@ -140,6 +140,8 @@
                 let status = $('input[name="status"]').val();
                 let errors = [];
 
+                // console.log(content);
+
                 if (cactegoty_id == '') {
                     errors.push('請選擇類別');
                 }

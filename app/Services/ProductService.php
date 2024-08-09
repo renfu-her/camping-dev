@@ -77,9 +77,9 @@ class ProductService extends Service
             $request['content_image'] = $this->uploadImage($this->request['content_image'], 960, 430);
         }
 
-        $product = Product::find($this->dataId);
+        $request['content'] = $this->request['content'];
 
-        dd($request);
+        $product = Product::find($this->dataId);
 
         $product->update($request);
 

@@ -90,6 +90,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $result = (new Service($request, $id))
             ->runValidate('product')
             ->update()
