@@ -18,12 +18,12 @@
                                 data-bs-toggle="dropdown">{{ $item['name'] }}</a>
                             <div class="dropdown-menu m-0">
                                 @foreach ($item['children'] as $child)
-                                    <a href="{{ $child['slug'] }}" class="dropdown-item">{{ $child['name'] }}</a>
+                                    <a href="/rent/{{ $child['id'] }}" class="dropdown-item">{{ $child['name'] }}</a>
                                 @endforeach
                             </div>
                         </div>
                     @else
-                        <a href="{{ $item['slug'] }}" class="nav-item nav-link">{{ $item['name'] }}</a>
+                        <a href="/rent/{{ $item['id'] }}" class="nav-item nav-link">{{ $item['name'] }}</a>
                     @endif
                 @endforeach
 

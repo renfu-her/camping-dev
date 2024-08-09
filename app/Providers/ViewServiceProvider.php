@@ -11,7 +11,9 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('partials.menu', function ($view) {
-            $categories = Category::where('status', 1)->get();
+            $categories = Category::where('status', 1)
+                ->orderBy('sort', 'asc') // 按照 sort 欄位進行升序排序
+                ->get();
             $tree = $this->buildCategoryTree($categories);
             $view->with('menu', $tree);
         });
