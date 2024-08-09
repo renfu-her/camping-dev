@@ -131,7 +131,7 @@
                     'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
                     'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'help'
                 ],
-                toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                toolbar: 'undo redo | styles | bold italic fontsize forecolor | alignleft aligncenter alignright alignjustify | ' +
                     'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
                     'forecolor backcolor emoticons | help',
                 menu: {
