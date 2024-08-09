@@ -18,15 +18,24 @@ class ProductController extends Controller
         return redirect('/backend/product');
     }
 
-    public function index()
+    public function index(Request $request)
     {
 
-        $categories = Category::where('parent_id', 5)->where('status', 1)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
+        // 取得請求中的 category_id，預設為 0
+        $categoryId = $request->get('category_id', 0);
 
-        $products = Product::with('category')->orderBy('sort', 'asc')->get();
+        $categories = [0 => '未分類'] + Category::where('parent_id', 5)->where('status', 1)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
+
+        // 根據 category_id 來篩選產品
+        $products = Product::with('category')
+            ->when($categoryId > 0, function ($query) use ($categoryId) {
+                return $query->where('category_id', $categoryId);
+            })
+            ->orderBy('sort', 'asc')
+            ->get();
 
 
-        return view('backend.product.index', compact('products', 'categories'));
+        return view('backend.product.index', compact('products', 'categories', 'categoryId'));
     }
 
     public function create()

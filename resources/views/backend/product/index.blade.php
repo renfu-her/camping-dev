@@ -27,6 +27,17 @@
                     <a href="{{ route('backend.product.create') }}" class="btn btn-add">
                         <i class="fa-regular fa-square-plus"></i>&nbsp;新增內容管理</a>
                 </div>
+
+                <div class="card-body">
+                    <x:form::form class="row" id="form-category" method="GET"
+                        action="{{ route('backend.product.index') }}">
+                        <div class="mt-3 col-12 col-lg-4 col-md-6">
+                            <x:form::select name="category_id" label="類別" :options="$categories"
+                                :selected="[$categoryId]" :value="$categoryId" onchange="this.form.submit()" />
+                        </div>
+                    </x:form::form>
+                </div>
+
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="dataTable" class="cell-border">
