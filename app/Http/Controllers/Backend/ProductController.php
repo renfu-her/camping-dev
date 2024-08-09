@@ -21,9 +21,9 @@ class ProductController extends Controller
     public function index()
     {
 
-        $categories = Category::where('slug', 'like', '/rent/%')->where('status', 1)->get()->pluck('name', 'id')->toArray();
+        $categories = Category::where('parent_id', 5)->where('status', 1)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
 
-        $products = Product::with('category')->get();
+        $products = Product::with('category')->orderBy('sort', 'asc')->get();
 
 
         return view('backend.product.index', compact('products', 'categories'));
@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categories = Category::where('slug', 'like', '/rent/%')->where('status', 1)->get()->pluck('name', 'id')->toArray();
+        $categories = Category::where('parent_id', 5)->where('status', 1)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
 
         return view('backend.product.create', compact('categories'));
     }
@@ -59,7 +59,7 @@ class ProductController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $categories = Category::where('slug', 'like', '/rent/%')->where('status', 1)->get()->pluck('name', 'id')->toArray();
+        $categories = Category::where('parent_id', 5)->where('status', 1)->orderBy('sort')->get()->pluck('name', 'id')->toArray();
 
         $product = Product::with('category')->find($id);
         $content = $product->content;
