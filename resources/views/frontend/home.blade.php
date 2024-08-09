@@ -39,192 +39,32 @@
                 <p class="mb-0">提供帳篷、睡袋、烹飪設備、照明和休閒設施等環保裝備租賃，攜手共建環保露營生活</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">各類帳篷</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-1.jpg') }}" class="img-fluid rounded-top w-100"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">帳篷租賃守護自然</h5>
-                                    <p class="mb-4">租用高品質帳篷，享受露營，同時保護環境</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
+                @foreach ($products as $product)
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="position-relative">
+                            <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">
+                                {{ $product->category->name }}</div>
+                            <div class="service-item rounded">
+                                <a href="{{ route('rent.detail', $product->id) }}">
+                                    <div class="service-img rounded-top">
+                                        <img src="{{ asset('images/' . $product->image) }}"
+                                            class="img-fluid rounded-top w-100" alt="">
+                                    </div>
+                                </a>
+                                <div class="service-content rounded-bottom bg-light p-4">
+                                    <div class="service-content-inner">
+                                        <h5 class="mb-4">{{ $product->name }}</h5>
+                                        <p class="mb-4">{{ $product->description }}...</p>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <a href="{{ route('rent.detail', $product->id) }}"
+                                                class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-purple fw-bold px-3 py-1 rounded position-absolute kind">睡袋與寢具</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-2.jpg') }}" class="img-fluid rounded-top w-100"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">舒適寢具享受自然</h5>
-                                    <p class="mb-4">租用高品質寢具，享受露營的同時輕鬆保護環境</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">各類帳篷</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-3.jpg') }}" class="img-fluid rounded-top w-100"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">戶外樂趣帳篷共享</h5>
-                                    <p class="mb-4">方便的帳篷服務讓每次露營都輕鬆無憂</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-secondary fw-bold px-3 py-1 rounded position-absolute kind">烹飪設配</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-4.jpg') }}" class="img-fluid rounded-top w-100"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">共享美味時光綠色露營</h5>
-                                    <p class="mb-4">品嚐到新鮮美味的料理，我們提供便捷的烹調器具</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-primary fw-bold px-3 py-1 rounded position-absolute kind">各類帳篷</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-5.jpg') }}" class="img-fluid rounded-top w-100"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">綠色露營從帳篷開始</h5>
-                                    <p class="mb-4">選擇環保帳篷，支持可持續露營，愛護地球</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-secondary fw-bold px-3 py-1 rounded position-absolute kind">烹飪設配</div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-6.jpg') }}"
-                                        class="img-fluid rounded-top w-100" alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">環保露營烹調器具租賃</h5>
-                                    <p class="mb-4">支持烹調器具，享受自然與美食的雙重樂趣</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-warning fw-bold px-3 py-1 rounded position-absolute kind">照明及休閒(桌椅)設備
-                        </div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-7.jpg') }}"
-                                        class="img-fluid rounded-top w-100" alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">舒適便攜的折疊椅</h5>
-                                    <p class="mb-4">輕巧便攜的環保折疊椅，讓你在戶外享</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="position-relative">
-                        <div class="text-white bg-warning fw-bold px-3 py-1 rounded position-absolute kind">照明及休閒(桌椅)設備
-                        </div>
-                        <div class="service-item rounded">
-                            <a href="#">
-                                <div class="service-img rounded-top">
-                                    <img src="{{ asset('img/service/service-8.jpg') }}"
-                                        class="img-fluid rounded-top w-100" alt="">
-                                </div>
-                            </a>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">點亮浪漫露營之夜</h5>
-                                    <p class="mb-4">高效節能的露營照明設備，讓你在戶外安全明亮，享受星空下的美好時光</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="page.html"
-                                            class="btn btn-outline-green rounded-pill text-dark py-2 px-4 mb-2">詳細資訊</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="col-12 text-center mt-5"><!--預設本單元第一類-->>
                 <a class="btn btn-green rounded-pill text-white py-3 px-5" href="tent.html">更多資訊</a>
